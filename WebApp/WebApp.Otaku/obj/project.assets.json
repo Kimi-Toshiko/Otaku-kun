@@ -8476,19 +8476,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\admin\\.nuget\\packages\\": {}
+    "C:\\Users\\user\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Otaku-kun\\WebApp\\WebApp.Otaku\\WebApp.Otaku.csproj",
+      "projectUniqueName": "D:\\Kimi_Toshiko\\Otaku-kun\\WebApp\\WebApp.Otaku\\WebApp.Otaku.csproj",
       "projectName": "WebApp.Otaku",
-      "projectPath": "E:\\Otaku-kun\\WebApp\\WebApp.Otaku\\WebApp.Otaku.csproj",
-      "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-      "outputPath": "E:\\Otaku-kun\\WebApp\\WebApp.Otaku\\obj\\",
+      "projectPath": "D:\\Kimi_Toshiko\\Otaku-kun\\WebApp\\WebApp.Otaku\\WebApp.Otaku.csproj",
+      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+      "outputPath": "D:\\Kimi_Toshiko\\Otaku-kun\\WebApp\\WebApp.Otaku\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

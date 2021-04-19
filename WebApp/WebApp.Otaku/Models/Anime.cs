@@ -19,6 +19,9 @@ namespace WebApp.Otaku.Models
         [MinLength(20)]
         public string Description { get; set; }
 
+        [DisplayName("Status")]
+        public int StatusID { get; set; }
+
         public Status Status { get; set; }
 
         [DisplayName("Age restriction")]
