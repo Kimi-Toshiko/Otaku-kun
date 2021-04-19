@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\WEST\\Otaku-kun\\WebApp\\WebApp.Otaku\\WebApp.Otaku.csproj": {}
+    "E:\\Otaku-kun\\WebApp\\WebApp.Otaku\\WebApp.Otaku.csproj": {}
   },
   "projects": {
-    "E:\\WEST\\Otaku-kun\\WebApp\\WebApp.Otaku\\WebApp.Otaku.csproj": {
+    "E:\\Otaku-kun\\WebApp\\WebApp.Otaku\\WebApp.Otaku.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\WEST\\Otaku-kun\\WebApp\\WebApp.Otaku\\WebApp.Otaku.csproj",
+        "projectUniqueName": "E:\\Otaku-kun\\WebApp\\WebApp.Otaku\\WebApp.Otaku.csproj",
         "projectName": "WebApp.Otaku",
-        "projectPath": "E:\\WEST\\Otaku-kun\\WebApp\\WebApp.Otaku\\WebApp.Otaku.csproj",
+        "projectPath": "E:\\Otaku-kun\\WebApp\\WebApp.Otaku\\WebApp.Otaku.csproj",
         "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "E:\\WEST\\Otaku-kun\\WebApp\\WebApp.Otaku\\obj\\",
+        "outputPath": "E:\\Otaku-kun\\WebApp\\WebApp.Otaku\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,32 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.13, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.1.5, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -57,7 +83,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
