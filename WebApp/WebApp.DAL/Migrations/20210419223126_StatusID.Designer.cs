@@ -2,15 +2,18 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using WebApp.Otaku.DAL;
+using WebApp.DAL;
+using WebApp.DAL.DBO;
 
-namespace WebApp.Otaku.Migrations
+namespace WebApp.DAL.Migrations
 {
     [DbContext(typeof(AnimeDBContext))]
-    partial class AnimeDBContextModelSnapshot : ModelSnapshot
+    [Migration("20210419223126_StatusID")]
+    partial class StatusID
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -18,7 +21,7 @@ namespace WebApp.Otaku.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("WebApp.Otaku.Models.Anime", b =>
+            modelBuilder.Entity("WebApp.DAL.DBO.Anime", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -64,7 +67,7 @@ namespace WebApp.Otaku.Migrations
                     b.ToTable("Anime");
                 });
 
-            modelBuilder.Entity("WebApp.Otaku.Models.Status", b =>
+            modelBuilder.Entity("WebApp.DAL.DBO.Status", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -79,9 +82,9 @@ namespace WebApp.Otaku.Migrations
                     b.ToTable("AnimeStatus");
                 });
 
-            modelBuilder.Entity("WebApp.Otaku.Models.Anime", b =>
+            modelBuilder.Entity("WebApp.DAL.DBO.Anime", b =>
                 {
-                    b.HasOne("WebApp.Otaku.Models.Status", "Status")
+                    b.HasOne("WebApp.DAL.DBO.Status", "Status")
                         .WithMany()
                         .HasForeignKey("StatusID")
                         .OnDelete(DeleteBehavior.Cascade)

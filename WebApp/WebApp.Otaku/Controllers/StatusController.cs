@@ -5,24 +5,26 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using WebApp.Otaku.DAL;
+using WebApp.DAL.DBO;
+using WebApp.DAL.Repositories;
+using WebApp.Otaku;
 using WebApp.Otaku.Models;
 
 namespace WebApp.Otaku.Controllers
 {
     public class StatusController : Controller
     {
-        private readonly AnimeDBContext _context;
+        private readonly IRepository<Status> _statusRepo;
 
-        public StatusController(AnimeDBContext context)
+        public StatusController(IRepository<Status> statusRepo)
         {
-            _context = context;
+            _statusRepo = statusRepo;
         }
 
         // GET: Status
         public async Task<IActionResult> Index()
         {
-            return View(await _context.AnimeStatus.ToListAsync());
+            return View(await _statusRepo.GetAllAsync());
         }
 
         // GET: Status/Details/5
@@ -33,8 +35,7 @@ namespace WebApp.Otaku.Controllers
                 return NotFound();
             }
 
-            var status = await _context.AnimeStatus
-                .FirstOrDefaultAsync(m => m.ID == id);
+            var status = await _statusRepo.GetByIdAsync(id.Value);
             if (status == null)
             {
                 return NotFound();
@@ -58,8 +59,7 @@ namespace WebApp.Otaku.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(status);
-                await _context.SaveChangesAsync();
+                await _statusRepo.CreateAsync(status);
                 return RedirectToAction(nameof(Index));
             }
             return View(status);
@@ -73,7 +73,7 @@ namespace WebApp.Otaku.Controllers
                 return NotFound();
             }
 
-            var status = await _context.AnimeStatus.FindAsync(id);
+            var status = await _statusRepo.GetByIdAsync(id.Value);
             if (status == null)
             {
                 return NotFound();
@@ -97,12 +97,11 @@ namespace WebApp.Otaku.Controllers
             {
                 try
                 {
-                    _context.Update(status);
-                    await _context.SaveChangesAsync();
+                    await _statusRepo.UpdateAsync(status);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!StatusExists(status.ID))
+                    if (!_statusRepo.Exists(status.ID))
                     {
                         return NotFound();
                     }
@@ -124,8 +123,7 @@ namespace WebApp.Otaku.Controllers
                 return NotFound();
             }
 
-            var status = await _context.AnimeStatus
-                .FirstOrDefaultAsync(m => m.ID == id);
+            var status = await _statusRepo.GetByIdAsync(id.Value);
             if (status == null)
             {
                 return NotFound();
@@ -139,15 +137,8 @@ namespace WebApp.Otaku.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var status = await _context.AnimeStatus.FindAsync(id);
-            _context.AnimeStatus.Remove(status);
-            await _context.SaveChangesAsync();
+            await _statusRepo.DeleteAsync(id);
             return RedirectToAction(nameof(Index));
-        }
-
-        private bool StatusExists(int id)
-        {
-            return _context.AnimeStatus.Any(e => e.ID == id);
         }
     }
 }

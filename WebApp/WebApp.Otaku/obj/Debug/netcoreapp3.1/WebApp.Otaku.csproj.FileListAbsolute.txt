@@ -306,3 +306,5 @@ D:\Kimi_Toshiko\Otaku-kun\WebApp\WebApp.Otaku\obj\Debug\netcoreapp3.1\Razor\View
 D:\Kimi_Toshiko\Otaku-kun\WebApp\WebApp.Otaku\obj\Debug\netcoreapp3.1\Razor\Views\Status\Details.cshtml.g.cs
 D:\Kimi_Toshiko\Otaku-kun\WebApp\WebApp.Otaku\obj\Debug\netcoreapp3.1\Razor\Views\Status\Edit.cshtml.g.cs
 D:\Kimi_Toshiko\Otaku-kun\WebApp\WebApp.Otaku\obj\Debug\netcoreapp3.1\Razor\Views\Status\Index.cshtml.g.cs
+D:\Kimi_Toshiko\Otaku-kun\WebApp\WebApp.Otaku\bin\Debug\netcoreapp3.1\WebApp.DAL.dll
+D:\Kimi_Toshiko\Otaku-kun\WebApp\WebApp.Otaku\bin\Debug\netcoreapp3.1\WebApp.DAL.pdb

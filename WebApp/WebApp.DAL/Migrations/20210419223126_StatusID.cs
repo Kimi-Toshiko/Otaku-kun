@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace WebApp.Otaku.Migrations
+namespace WebApp.DAL.Migrations
 {
     public partial class StatusID : Migration
     {

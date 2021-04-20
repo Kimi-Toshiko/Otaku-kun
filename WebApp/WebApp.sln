@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31025.194
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp.Otaku", "WebApp.Otaku\WebApp.Otaku.csproj", "{5EDF6210-94E0-412A-8505-7ACAE6C70EBF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApp.Otaku", "WebApp.Otaku\WebApp.Otaku.csproj", "{5EDF6210-94E0-412A-8505-7ACAE6C70EBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp.DAL", "WebApp.DAL\WebApp.DAL.csproj", "{4D5F8BEF-3760-4808-9B82-9542BE34F4CE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{5EDF6210-94E0-412A-8505-7ACAE6C70EBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5EDF6210-94E0-412A-8505-7ACAE6C70EBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5EDF6210-94E0-412A-8505-7ACAE6C70EBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D5F8BEF-3760-4808-9B82-9542BE34F4CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D5F8BEF-3760-4808-9B82-9542BE34F4CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D5F8BEF-3760-4808-9B82-9542BE34F4CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D5F8BEF-3760-4808-9B82-9542BE34F4CE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

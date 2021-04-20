@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using WebApp.Otaku.Models;
+using WebApp.DAL.DBO;
 
-namespace WebApp.Otaku.DAL
+namespace WebApp.DAL
 {
     public class AnimeDBContext : DbContext
     {

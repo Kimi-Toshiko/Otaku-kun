@@ -1,0 +1,11 @@
+D:\Kimi_Toshiko\Otaku-kun\WebApp\WebApp.DAL\bin\Debug\netcoreapp3.1\WebApp.DAL.deps.json
+D:\Kimi_Toshiko\Otaku-kun\WebApp\WebApp.DAL\bin\Debug\netcoreapp3.1\WebApp.DAL.runtimeconfig.json
+D:\Kimi_Toshiko\Otaku-kun\WebApp\WebApp.DAL\bin\Debug\netcoreapp3.1\WebApp.DAL.runtimeconfig.dev.json
+D:\Kimi_Toshiko\Otaku-kun\WebApp\WebApp.DAL\bin\Debug\netcoreapp3.1\WebApp.DAL.dll
+D:\Kimi_Toshiko\Otaku-kun\WebApp\WebApp.DAL\bin\Debug\netcoreapp3.1\WebApp.DAL.pdb
+D:\Kimi_Toshiko\Otaku-kun\WebApp\WebApp.DAL\obj\Debug\netcoreapp3.1\WebApp.DAL.AssemblyInfoInputs.cache
+D:\Kimi_Toshiko\Otaku-kun\WebApp\WebApp.DAL\obj\Debug\netcoreapp3.1\WebApp.DAL.AssemblyInfo.cs
+D:\Kimi_Toshiko\Otaku-kun\WebApp\WebApp.DAL\obj\Debug\netcoreapp3.1\WebApp.DAL.csproj.CoreCompileInputs.cache
+D:\Kimi_Toshiko\Otaku-kun\WebApp\WebApp.DAL\obj\Debug\netcoreapp3.1\WebApp.DAL.dll
+D:\Kimi_Toshiko\Otaku-kun\WebApp\WebApp.DAL\obj\Debug\netcoreapp3.1\WebApp.DAL.pdb
+D:\Kimi_Toshiko\Otaku-kun\WebApp\WebApp.DAL\obj\Debug\netcoreapp3.1\WebApp.DAL.genruntimeconfig.cache

@@ -5,25 +5,28 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using WebApp.Otaku.DAL;
+using WebApp.DAL.DBO;
+using WebApp.DAL.Repositories;
+using WebApp.Otaku;
 using WebApp.Otaku.Models;
 
 namespace WebApp.Otaku.Controllers
 {
     public class AnimesController : Controller
     {
-        private readonly AnimeDBContext _context;
+        private readonly IRepository<Anime> _animeRepo;
+        private readonly IRepository<Status> _statusRepo;
 
-        public AnimesController(AnimeDBContext context)
+        public AnimesController(IRepository<Anime> animeRepo, IRepository<Status> statusRepo)
         {
-            _context = context;
+            _animeRepo = animeRepo;
+            _statusRepo = statusRepo;
         }
 
         // GET: Animes
         public async Task<IActionResult> Index()
         {
-            var animeDBContext = _context.Anime.Include(a => a.Status);
-            return View(await animeDBContext.ToListAsync());
+            return View(await _animeRepo.GetAllAsync());
         }
 
         // GET: Animes/Details/5
@@ -34,9 +37,7 @@ namespace WebApp.Otaku.Controllers
                 return NotFound();
             }
 
-            var anime = await _context.Anime
-                .Include(a => a.Status)
-                .FirstOrDefaultAsync(m => m.ID == id);
+            var anime = await _animeRepo.GetByIdAsync(id.Value);
             if (anime == null)
             {
                 return NotFound();
@@ -46,9 +47,9 @@ namespace WebApp.Otaku.Controllers
         }
 
         // GET: Animes/Create
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
-            ViewData["StatusID"] = new SelectList(_context.AnimeStatus, "ID", "ProgressionStatus");
+            ViewData["StatusID"] = new SelectList(await _statusRepo.GetAllAsync(), "ID", "ProgressionStatus");
             return View();
         }
 
@@ -61,11 +62,10 @@ namespace WebApp.Otaku.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(anime);
-                await _context.SaveChangesAsync();
+                await _animeRepo.CreateAsync(anime);
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["StatusID"] = new SelectList(_context.AnimeStatus, "ID", "ProgressionStatus", anime.StatusID);
+            ViewData["StatusID"] = new SelectList(await _statusRepo.GetAllAsync(), "ID", "ProgressionStatus", anime.StatusID);
             return View(anime);
         }
 
@@ -77,12 +77,12 @@ namespace WebApp.Otaku.Controllers
                 return NotFound();
             }
 
-            var anime = await _context.Anime.FindAsync(id);
+            var anime = await _animeRepo.GetByIdAsync(id.Value);
             if (anime == null)
             {
                 return NotFound();
             }
-            ViewData["StatusID"] = new SelectList(_context.AnimeStatus, "ID", "ProgressionStatus", anime.StatusID);
+            ViewData["StatusID"] = new SelectList(await _statusRepo.GetAllAsync(), "ID", "ProgressionStatus", anime.StatusID);
             return View(anime);
         }
 
@@ -102,12 +102,11 @@ namespace WebApp.Otaku.Controllers
             {
                 try
                 {
-                    _context.Update(anime);
-                    await _context.SaveChangesAsync();
+                    await _animeRepo.UpdateAsync(anime);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!AnimeExists(anime.ID))
+                    if (!_animeRepo.Exists(anime.ID))
                     {
                         return NotFound();
                     }
@@ -118,7 +117,7 @@ namespace WebApp.Otaku.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["StatusID"] = new SelectList(_context.AnimeStatus, "ID", "ProgressionStatus", anime.StatusID);
+            ViewData["StatusID"] = new SelectList(await _statusRepo.GetAllAsync(), "ID", "ProgressionStatus", anime.StatusID);
             return View(anime);
         }
 
@@ -130,9 +129,7 @@ namespace WebApp.Otaku.Controllers
                 return NotFound();
             }
 
-            var anime = await _context.Anime
-                .Include(a => a.Status)
-                .FirstOrDefaultAsync(m => m.ID == id);
+            var anime = await _animeRepo.GetByIdAsync(id.Value);
             if (anime == null)
             {
                 return NotFound();
@@ -146,15 +143,8 @@ namespace WebApp.Otaku.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var anime = await _context.Anime.FindAsync(id);
-            _context.Anime.Remove(anime);
-            await _context.SaveChangesAsync();
+            await _animeRepo.DeleteAsync(id);
             return RedirectToAction(nameof(Index));
-        }
-
-        private bool AnimeExists(int id)
-        {
-            return _context.Anime.Any(e => e.ID == id);
         }
     }
 }

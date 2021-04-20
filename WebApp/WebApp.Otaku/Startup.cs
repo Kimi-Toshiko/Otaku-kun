@@ -9,7 +9,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using WebApp.Otaku.DAL;
+using WebApp.DAL;
+using WebApp.DAL.DBO;
+using WebApp.DAL.Repositories;
+using WebApp.Otaku;
 
 namespace WebApp.Otaku
 {
@@ -25,6 +28,9 @@ namespace WebApp.Otaku
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IRepository<Anime>, AnimesRepository>();
+            services.AddScoped<IRepository<Status>, StatusRepository>();
+
             services.AddControllersWithViews();
 
             services.AddDbContext<AnimeDBContext>(

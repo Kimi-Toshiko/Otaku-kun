@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WebApp.Otaku.Models
+namespace WebApp.DAL.DBO
 {
     public class Status
     {
