@@ -9,3 +9,4 @@ D:\Kimi_Toshiko\Otaku-kun\WebApp\WebApp.DAL\obj\Debug\netcoreapp3.1\WebApp.DAL.c
 D:\Kimi_Toshiko\Otaku-kun\WebApp\WebApp.DAL\obj\Debug\netcoreapp3.1\WebApp.DAL.dll
 D:\Kimi_Toshiko\Otaku-kun\WebApp\WebApp.DAL\obj\Debug\netcoreapp3.1\WebApp.DAL.pdb
 D:\Kimi_Toshiko\Otaku-kun\WebApp\WebApp.DAL\obj\Debug\netcoreapp3.1\WebApp.DAL.genruntimeconfig.cache
+D:\Kimi_Toshiko\Otaku-kun\WebApp\WebApp.DAL\obj\Debug\netcoreapp3.1\WebApp.DAL.csprojAssemblyReference.cache
